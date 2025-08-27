@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <title>{% block title%} {% endblock %}</title>
+<header>
+    <div class="max-w-7xl mx-auto flex items-center justify-between py-6 px-4 sm:px-12 lg:px-24">
+        <!-- Logo / Title -->
+        <h1 class="text-black font-['Outfit'] font-bold text-2xl sm:text-3xl lg:text-4xl transition-transform duration-300 hover:scale-105">
+            <a href="/" class="transition">Note Flow</a>
+        </h1>
+
+        <!-- Hamburger Menu Button (visible on small screens) -->
+        <button id="mobile-menu-toggle" class="sm:hidden text-black focus:outline-none p-2 rounded-md">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+
+        <!-- Desktop Navigation (visible on 'sm' screens and larger) -->
+        <nav class="hidden sm:flex gap-[13px] text-black items-center">
+            <a href="/login" class="inline-block border-2 border-black font-['Outfit'] font-bold rounded-[24px] px-[36px] py-[11px] shadow-[0_2px_4px_0_rgba(0,0,0,0.25)] hover:bg-white transition-transform duration-300 hover:scale-105">
+                Login
+            </a>
+            <a href="/sign-up" class="inline-block bg-[#3F72AF] text-white font-['Outfit'] font-bold rounded-[24px] px-[36px] py-[11px] shadow-[0_2px_4px_0_rgba(0,0,0,0.25)] hover:bg-[#112D4E] transition-transform duration-300 hover:scale-105">
+                Start for free
+            </a>
+        </nav>
+    </div>
+
+<!-- Mobile Menu (Smooth Dropdown) -->
+<div id="mobile-menu" class="sm:hidden max-h-0 overflow-hidden transition-all duration-1000 ease-in-out">
+    <div class="flex flex-col items-start gap-4 px-4 py-4 bg-[#112D4E] shadow-md">
+        <a href="/login" class="inline-block font-['Outfit'] text-white">
+            Login
+        </a>
+        <a href="/sign-up" class="inline-block font-['Outfit'] text-white">
+            Start for free
+        </a>
+    </div>
+</div>
+</header>
+
+<!-- Add this JavaScript at the end of your <body> tag -->
+<script>
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.toggle('max-h-0');
+        if (!isHidden) {
+            mobileMenu.classList.add('max-h-screen');
+        } else {
+            mobileMenu.classList.remove('max-h-screen');
+        }
+    });
+</script>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
