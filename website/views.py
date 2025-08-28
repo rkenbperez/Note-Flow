@@ -8,3 +8,7 @@ views = Blueprint("views",__name__)
 def home():
     return render_template("home.html.j2")
 
+@views.route("/login")
+def login():
+    return render_template("login.html.j2")
+
