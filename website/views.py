@@ -12,3 +12,6 @@ def home():
 def login():
     return render_template("login.html.j2")
 
+@views.route("/sign-up")
+def sign_up():
+    return render_template("sign-up.html.j2")
