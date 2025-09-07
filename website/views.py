@@ -15,3 +15,7 @@ def login():
 @views.route("/sign-up")
 def sign_up():
     return render_template("sign-up.html.j2")
+
+@views.route("/flow", methods=["GET", "POST"])
+def user():
+    return render_template("flow.html.j2")
