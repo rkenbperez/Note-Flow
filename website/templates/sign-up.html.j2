@@ -6,15 +6,18 @@
 
 <div class="flex justify-center items-center pt-[100px]">
     <div class="flex justify-center items-center border-2 border-black w-[705px] h-[564px] rounded-[24px]">
-        <form method="POST">
+        <form method="POST" action="{{ url_for('auth.sign_up') }}">
             <h1 class="font-[Outfit] font-bold text-[40px]">Create your account</h1>
             <div class="form-group flex flex-col pt-[20px]">
                 <input type="text" id="email" name="email" class="form-control border-2 rounded-[24px] w-[525px] h-[80px] px-4 placeholder:font-[Outfit] placeholder:text-[32px] text-[32px] font-[Outfit]" placeholder="Enter Email" />
                 <br />
-                <input type="text" id="name" name="name" class="form-control border-2 rounded-[24px] w-[525px] h-[80px] px-4 placeholder:font-[Outfit] placeholder:text-[32px] text-[32px] font-[Outfit]" placeholder="Enter Name" />
+                <input type="text" id="name" name="username" class="form-control border-2 rounded-[24px] w-[525px] h-[80px] px-4 placeholder:font-[Outfit] placeholder:text-[32px] text-[32px] font-[Outfit]" placeholder="Enter Name" />
                 <br />
-                <input type="password" id="password" name="password" class="form-control border-2 rounded-[24px] w-[525px] h-[80px] px-4 placeholder:font-[Outfit] placeholder:text-[32px] text-[32px] font-[Outfit]"
+                <input type="password" id="password1" name="password1" class="form-control border-2 rounded-[24px] w-[525px] h-[80px] px-4 placeholder:font-[Outfit] placeholder:text-[32px] text-[32px] font-[Outfit]"
                     placeholder="Enter Password" />
+                <br />
+                <input type="password" id="password2" name="password2" class="form-control border-2 rounded-[24px] w-[525px] h-[80px] px-4 placeholder:font-[Outfit] placeholder:text-[32px] text-[32px] font-[Outfit]"
+                    placeholder="Confirm Password" />
                 <br />
                 <div align="center" class="pt-[8px]">
                     <button class="btn btn-primary rounded-[24px] w-[525px] h-[56px] bg-[#3F72AF] text-white text-[26px] font-[Outfit] font-bold hover:bg-[#112D4E] transition-transform duration-300 hover:scale-105" type="submit">Proceed</button>

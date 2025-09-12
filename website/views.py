@@ -1,21 +1,14 @@
-from flask import Blueprint, render_template, redirect, request
+from flask import Blueprint, render_template
 from flask_login import login_required, current_user
 
-views = Blueprint("views",__name__)
+views = Blueprint("views", __name__)
 
 @views.route("/")
 @views.route("/home")
 def home():
-    return render_template("home.html.j2")
+    return render_template("home.html.j2", user=current_user)
 
-@views.route("/login")
-def login():
-    return render_template("login.html.j2")
-
-@views.route("/sign-up")
-def sign_up():
-    return render_template("sign-up.html.j2")
-
-@views.route("/flow", methods=["GET", "POST"])
-def user():
-    return render_template("flow.html.j2")
+@views.route("/flow")
+@login_required
+def flow():
+    return render_template("flow.html.j2", user=current_user)
