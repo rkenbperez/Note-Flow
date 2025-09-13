@@ -7,6 +7,16 @@
     <div class="flex flex-col py-8 gap-y-8 items-center">
         <h1 class="text-[88px] font-[Outfit] font-bold">Get your ideas flowing</h1>
         <p class="text-[24px] text-center font-[Outfit] max-w-160">Write without friction, Noteflow keeps your notes organized and searchable automatically.</p>
+        <div class="flex gap-[24px] py-[12px]">
+            <a href="/about" class="inline-block bg-[#3F72AF] text-white font-['Outfit'] font-bold rounded-[24px] px-[36px] py-[11px] shadow-[0_2px_4px_0_rgba(0,0,0,0.25)] hover:bg-[#112D4E] transition-transform duration-300 hover:scale-105">
+                About Us
+            </a>
+            <a href="/contact" class="inline-block bg-[#3F72AF] text-white font-['Outfit'] font-bold rounded-[24px] px-[36px] py-[11px] shadow-[0_2px_4px_0_rgba(0,0,0,0.25)] hover:bg-[#112D4E] transition-transform duration-300 hover:scale-105">
+                Contact
+            </a>
+        </nav> 
+        </div>
+        <img class="rounded-[12px] shadow-[0_0_12px_0_rgba(0,0,0,0.25)]" src="{{ url_for('static', filename='img/image.png') }}" height="631px" width="893px">
     </div>
 </div>
 {% endblock %}
