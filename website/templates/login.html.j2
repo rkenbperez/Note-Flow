@@ -3,23 +3,38 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+<div class="flex justify-center items-center pt-24">
+  <div class="flex justify-center items-center border-2 border-black w-full max-w-3xl rounded-3xl p-8 md:p-10 mx-4">
+    <form method="POST" action="{{ url_for('auth.login') }}" class="w-full">
+      <h1 class="font-[Outfit] font-bold text-4xl">Login</h1>
 
-<div class="flex justify-center items-center pt-[100px]">
-    <div class="flex justify-center items-center border-2 border-black w-[705px] h-[564px] rounded-[24px]">
-        <form method="POST" action="{{ url_for('auth.login') }}">
-            <h1 class="font-[Outfit] font-bold text-[40px]">Login</h1>
-            <div class="form-group flex flex-col pt-[52px]">
-                <input type="text" id="email" name="email" class="form-control border-2 rounded-[24px] w-[525px] h-[80px] px-4 placeholder:font-[Outfit] placeholder:text-[32px] text-[32px] font-[Outfit]" placeholder="Enter Email" />
-                <br />
-                <input type="password" id="password" name="password" class="form-control border-2 rounded-[24px] w-[525px] h-[80px] px-4 placeholder:font-[Outfit] placeholder:text-[32px] text-[32px] font-[Outfit]"
-                    placeholder="Enter Password" />
-                <br />
-                <div align="center" class="pt-[34px]">
-                    <button class="btn btn-primary rounded-[24px] w-[525px] h-[56px] bg-[#3F72AF] text-white text-[26px] font-[Outfit] font-bold hover:bg-[#112D4E] transition-transform duration-300 hover:scale-105" type="submit">Proceed</button>
-                </div>
-            </div>
-        </form>
-    </div>
+      <div class="form-group flex flex-col pt-12 space-y-6">
+        <input
+          type="text"
+          id="email"
+          name="email"
+          class="form-control border-2 rounded-3xl w-full h-20 px-4 placeholder:font-[Outfit] placeholder:text-3xl text-3xl font-[Outfit]"
+          placeholder="Enter Email"
+        />
+
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control border-2 rounded-3xl w-full h-20 px-4 placeholder:font-[Outfit] placeholder:text-3xl text-3xl font-[Outfit]"
+          placeholder="Enter Password"
+        />
+
+        <div class="pt-8">
+          <button
+            type="submit"
+            class="btn btn-primary rounded-3xl w-full h-14 bg-[#3F72AF] text-white text-2xl font-[Outfit] font-bold hover:bg-[#112D4E] transition-transform duration-300 hover:scale-105"
+          >
+            Proceed
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
-
 {% endblock %}
